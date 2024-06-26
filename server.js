@@ -30,6 +30,8 @@ io.on("connection", (socket) => {
   console.log("a user connected");
 
   socket.on("join room", ({ username, room }) => {
+    socket.username = username;
+    socket.room = room;
     socket.join(room);
 
     // Store username in the database if it doesn't exist
@@ -81,6 +83,9 @@ io.on("connection", (socket) => {
   });
 
   socket.on("delete message", ({ messageId }) => {
+     const username = socket.username; // Get the username associated with this socket
+    const room = socket.room; // Get the room associated with this socket
+    
     db.get(
       "SELECT username FROM messages WHERE rowid = ?",
       [messageId],
