@@ -40,8 +40,9 @@ A real-time chat application built with Node.js, Express, Socket.io, and SQLite3
 ├── server.js
 ├── package.json
 
-##Link
-Copy the link an duse it:-
+## Link
+
+Copy the link an use it:-
 ```sh
 https://chat-app-47xh.onrender.com
 ```
